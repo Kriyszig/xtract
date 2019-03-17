@@ -1,0 +1,14 @@
+{
+  "name": "xtract",
+  "version": "0.0.1",
+  "description": "A libraray to extract data from PDF documents into dataframe and clean it",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Blitzkrieg.",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "electron": "^4.0.6"
+  }
+}

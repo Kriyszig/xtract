@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Dataxract</title>
+</head>
+<body>
+    <div class="top-bar">
+        <button class="navigation-buttons" id="prev-page">
+            <i class="fas fa-arrow-circle-left"></i>
+        </button>
+        <button class="navigation-buttons" id="next-page">
+            <i class="fas fa-arrow-circle-right"></i>
+        </button>
+    </div>
+    <canvas id="pdf-display"></canvas>
+    <div id="draw-overlay"></div>
+    <div class="page-num"><h3>Page <h2 id="current-page">1</h2> of <h2 id="total-pages">5</h2></h3></div>
+    <button id="dld-canvas" class="download-canvas">Download PDF Page</button>
+    <a id="hidden-download"></a>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="./js/windowControl.js"></script>
+</body>
+</html>

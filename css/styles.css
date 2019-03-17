@@ -1,0 +1,73 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    background-position: center;
+    min-height: 100%;
+    margin: 0px;
+}
+
+.top-bar {
+    color: white;
+    background-color: black;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    padding: 5px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-num {
+    color: white;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 65px;
+    padding: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.navigation-buttons {
+    background-color: white;
+    width: 50px;
+    height: 25px;
+}
+
+#current-page, #total-pages {
+    color: yellow;
+}
+
+#pdf-diasplay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#draw-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.rectangle {
+    border: 1px solid #FF0000;
+    position: absolute;
+}
+
+.download-canvas {
+    position: absolute;
+    top: 125px;
+    right: 45px;
+}
+
+#hidden-download {
+    display: none;
+}

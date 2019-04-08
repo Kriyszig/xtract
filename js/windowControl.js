@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-let fileURL = "/home/frick/sih/tabular data/UBS.pdf";//path.resolve(__dirname, './assets/DefaultScreen.pdf'); // Local URL to the file to be rendered or processed
+let fileURL = path.resolve(__dirname, './assets/DefaultScreen.pdf'); // Local URL to the file to be rendered or processed
 let pageNum = 1;    // Page number of the rendered page
 let totalPages = 1; // Total page in the file
 let pageIsRendering = false; // Flag fo pages currently rendering\

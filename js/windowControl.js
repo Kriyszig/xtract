@@ -167,6 +167,9 @@ function initDraw(canvass) {
             element.className = 'rectangle';
             element.style.left = mouse.x + 'px';
             element.style.top = (mouse.y - window.pageYOffset) + 'px';
+            if(canvass.firstChild){
+                canvass.removeChild(canvass.firstChild);
+            }
             canvass.appendChild(element)
             canvass.style.cursor = "crosshair";
         }

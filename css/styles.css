@@ -15,7 +15,7 @@ body {
     align-items: center;
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 30px;
     padding: 5px;
     width: 170px;
     display: flex;
@@ -66,6 +66,14 @@ body {
     position: absolute;
     top: 125px;
     right: 45px;
+    width: 150px;
+}
+
+#clr-overlay {
+    position: absolute;
+    top: 160px;
+    right: 45px;
+    width: 150px;
 }
 
 #hidden-download {

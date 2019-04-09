@@ -6,7 +6,7 @@ let pageNum = 1;    // Page number of the rendered page
 let totalPages = 1; // Total page in the file
 let pageIsRendering = false; // Flag fo pages currently rendering\
 let pageNumPending = null;
-let boxes = [];
+let boxes = [100, 100, 0 , 0];
 
 const scale = 1.5;  // Scale of the dispalyed PDF
 const canvas = document.querySelector('#pdf-display');
@@ -111,6 +111,7 @@ const clearOverlay = () => {
     while(drawing.firstChild){
         drawing.removeChild(drawing.firstChild);
     }
+    boxes = [100, 100, 0 , 0];
 };
 
 // This function was stolen form: http://jsfiddle.net/d9BPz/546/ - slightly modified to enable rectangle resizing even during scoll action
@@ -156,9 +157,8 @@ function initDraw(canvass) {
         if (element !== null) {
             element = null;
             canvass.style.cursor = "default";
-            boxes.push([mouse.x/canvas.width * 100, (mouse.y - window.pageYOffset)/canvas.height * 100, mouse.startX/canvas.width * 100, (mouse.startY - initialOffset)/canvas.height * 100]);
+            boxes = [mouse.x/canvas.width * 100, (mouse.y - window.pageYOffset)/canvas.height * 100, mouse.startX/canvas.width * 100, (mouse.startY - initialOffset)/canvas.height * 100];
             console.log(boxes);
-            console.log(mouse);
         } else {
             mouse.startX = mouse.x;
             mouse.startY = mouse.y;

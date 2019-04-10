@@ -95,12 +95,14 @@ document.querySelector('#next-page').addEventListener('click', () => {
 });
 
 document.querySelector('#dld-canvas').addEventListener('click', () => {
-    console.log('here');
-    var link = document.getElementById('hidden-download');
-    link.setAttribute('download', 'MintyPaper.png');
-    link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-    link.click();
-    console.log('here');
+    let base64Data = canvas.toDataURL("image/png").replace(/^data:image\/png;base64,/, "");
+    let p1 = fileURL.lastIndexOf('/');
+    let p2 = fileURL.lastIndexOf('.');
+    p1 = (p1 >= 0)? p1: 0;
+    let name = fileURL.substring(p1, p2) + '_p' + pageNum;
+    fs.writeFileSync(path.resolve(__dirname, `./extras/${name}.png`), base64Data, 'base64', (err) => {
+        console.log(err);
+    });
 });
 
 // clearOverlay: () => void

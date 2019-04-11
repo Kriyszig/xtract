@@ -11,12 +11,13 @@ app.on('ready', () => {
     appWindow = new BrowserWindow({
         height: 900,
         width: 1600,
+        minHeight:900,
+        minWidth: 1200,
         webPreferences: {
             enableRemoteModule: true,
             nodeIntegration: true,
             contextIsolation: false
-        },
-        resizable: false
+        }
     });
     appWindow.loadURL(url.format({
         pathname: path.join(__dirname, './mainWindow.html'),

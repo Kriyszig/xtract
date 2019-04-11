@@ -180,10 +180,16 @@ function initDraw(canvass) {
 
 displayDoc();
 
+// Prevent default behavior when onject is dragged on the overlay
+// (e) => void
+// e: DOM Event
 const allowDrop = (e) => {
     e.preventDefault();
 }
 
+// Accepts the dropped item and checks for the file to be a PDF. If yes, proceeds to set the fileURL to the path of new PDF and calls display function again
+// (ev) => void
+// ev: DOM Event
 const dropHandler = (ev) => {
     ev.preventDefault();
     if (ev.dataTransfer.items) {
@@ -202,4 +208,26 @@ const dropHandler = (ev) => {
             }
         }
     }
+}
+
+// submitDoc: Processes the PDF file to give the tabular data
+//            This is done by spawning a child process that runds the extract.py Python script which uses Py-Tabula to get the data
+// () => void
+const submitDoc = () => {
+    var spawn = require('child_process').spawn; // Getting chlidPRocess.spawn from node.js core API
+    // Creating the list of querystring for the child process
+    let qureystring = [path.resolve(__dirname, './python/extract.py'), fileURL, boxes[0], boxes[1], boxes[2], boxes[3], pageNum];
+    let process = spawn('python3', qureystring);
+    let success = true;
+    // Message is stdout is only recieved after the child process has finished. 
+    // Check extract.py line 20 for the single print statement that populates the stream
+    process.stdout.on('data', (data) => {
+        // console.log('here');
+        alert('Hoory! We managed to get the tabular data out of your PDF. Check tmp.csv for the result');
+    });
+    // Checking for data in error stream. If yes, sending a message letting user know that something has went wrong
+    process.stderr.on('data', (data) => {
+        success = false;
+        alert('Something went wrong while parsing your PDF. Please make sure the page you are on has some tabular data for our software to fetch!');
+    });
 }

@@ -76,6 +76,9 @@ body {
     width: 150px;
 }
 
-#hidden-download {
-    display: none;
+#submit-doc {
+    position: absolute;
+    top: 195px;
+    right: 45px;
+    width: 150px;
 }

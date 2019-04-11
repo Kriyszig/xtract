@@ -13,10 +13,9 @@ body {
     color: white;
     background-color: black;
     align-items: center;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    padding: 5px;
+    padding-right: 20px;
+    padding-left: 20px; 
+    padding-top: 20px;
     width: 170px;
     display: flex;
     justify-content: space-between;
@@ -25,10 +24,7 @@ body {
 .page-num {
     color: white;
     align-items: center;
-    position: absolute;
-    top: 50px;
-    right: 65px;
-    padding: 5px;
+    padding-right: 52px;
     width: 100px;
     display: flex;
     justify-content: space-around;
@@ -62,23 +58,12 @@ body {
     position: absolute;
 }
 
+.download-canvas, #clr-overlay, #submit-doc {
+    width: 150px;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
 .download-canvas {
-    position: absolute;
-    top: 125px;
-    right: 45px;
-    width: 150px;
-}
-
-#clr-overlay {
-    position: absolute;
-    top: 160px;
-    right: 45px;
-    width: 150px;
-}
-
-#submit-doc {
-    position: absolute;
-    top: 195px;
-    right: 45px;
-    width: 150px;
+    margin-top: 30px;
 }

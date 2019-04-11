@@ -7,20 +7,26 @@
     <title>Xtract</title>
 </head>
 <body>
-    <div class="top-bar">
-        <button class="navigation-buttons" id="prev-page">
-            <i class="fas fa-arrow-circle-left"></i>
-        </button>
-        <button class="navigation-buttons" id="next-page">
-            <i class="fas fa-arrow-circle-right"></i>
-        </button>
+    <div class="mega-container" style="display:flex;">
+        <div>
+            <canvas id="pdf-display"></canvas>
+            <div id="draw-overlay" ondragover="allowDrop(event)" ondrop="dropHandler(event)"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; width:100%">
+            <div class="top-bar">
+                <button class="navigation-buttons" id="prev-page">
+                    <i class="fas fa-arrow-circle-left"></i>
+                </button>
+                <button class="navigation-buttons" id="next-page">
+                    <i class="fas fa-arrow-circle-right"></i>
+                </button>
+            </div>
+            <div class="page-num"><h3>Page <h2 id="current-page">1</h2> of <h2 id="total-pages">5</h2></h3></div>
+            <button id="dld-canvas" class="download-canvas">Download PDF Page</button>
+            <button id="clr-overlay" onclick="clearOverlay()">Clear Selected Areas</button>
+            <button id="submit-doc" onclick="submitDoc()">Submit</button>
+        </div>
     </div>
-    <canvas id="pdf-display"></canvas>
-    <div id="draw-overlay" ondragover="allowDrop(event)" ondrop="dropHandler(event)"></div>
-    <div class="page-num"><h3>Page <h2 id="current-page">1</h2> of <h2 id="total-pages">5</h2></h3></div>
-    <button id="dld-canvas" class="download-canvas">Download PDF Page</button>
-    <button id="clr-overlay" onclick="clearOverlay()">Clear Selected Areas</button>
-    <button id="submit-doc" onclick="submitDoc()">Submit</button>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="./js/windowControl.js"></script>
 </body>

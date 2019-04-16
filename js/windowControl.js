@@ -80,6 +80,7 @@ document.querySelector('#prev-page').addEventListener('click', () => {
     else{
         --pageNum;
         renderPage(pageNum);
+        clearOverlay();
     }
 });
 
@@ -91,6 +92,7 @@ document.querySelector('#next-page').addEventListener('click', () => {
     else{
         ++pageNum;
         renderPage(pageNum);
+        clearOverlay();
     }
 });
 
